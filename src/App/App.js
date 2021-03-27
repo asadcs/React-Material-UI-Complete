@@ -1,23 +1,16 @@
 
-import { createMuiTheme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, CssBaseline, makeStyles, ThemeProvider,Card } from '@material-ui/core';
 import Header from '../components/Header';
+import PageHeader from '../components/PageHeader';
 import SideMenumakeStyles from '../components/SideMenumakeStyles';
 import SideMenuWithStyles from '../components/SideMenuWithStyles';
 import './App.css';
+import AccessibilityIcon from '@material-ui/icons/Accessibility';
 
 const theme = createMuiTheme({
   palette:{
-    primary:{
-      main:'#FF0000',
-      light:'#FFFF00'
-    },
-    secondary:{
-      main:'#FF00FF',
-      light:'#808000'
-    },
-    background:{
-      default:'#ffe6e6'
-    }
+  
+
   }
 })
 const useStyle=makeStyles(
@@ -39,6 +32,11 @@ function App() {
       <ThemeProvider theme={theme}>
       <SideMenuWithStyles/>
       <Header/>
+      <PageHeader
+      title="Page Title"
+      subtitle="Page Description"
+      icon={<AccessibilityIcon fontSize="large"/>}>
+      </PageHeader>
       <CssBaseline/>
       </ThemeProvider>
     </div>
