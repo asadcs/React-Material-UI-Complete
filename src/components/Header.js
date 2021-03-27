@@ -31,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiSvgIcon-root':{
             marginRight:'8px'
         }
+    },
+    btnRoot:{
+        backgroundColor:'green'
+    },
+    btnLabel:{
+        backgroundColor:'red'
     }
 }));
 
@@ -49,7 +55,7 @@ export default function Header() {
                         <InputBase />
                     </Grid>
                     <Grid item  >
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <IconButton classes={{root:classes.btnRoot,label:classes.btnLabel}} >
                             <Badge badgeContent={4} color='secondary'>
                                 <NotificationsNoneIcon fontSize="small"/>
                             </Badge>
