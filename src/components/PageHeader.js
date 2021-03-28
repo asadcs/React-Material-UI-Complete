@@ -20,10 +20,10 @@ const useStyle=makeStyles(theme=>({
         '& .MuiTypography-subtitle2':{
             opacity:'0.6'
         }
-    },
-    PageSubTitle:{
-        paddingLeft:theme.spacing(4)
     }
+    // PageSubTitle:{
+    //     paddingLeft:theme.spacing(4)
+    // // }
 }))
 export default function PageHeader(props) {
     const classes=useStyle()

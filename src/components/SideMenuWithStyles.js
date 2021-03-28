@@ -7,7 +7,7 @@ const useStyles={
     zIndex: '1', /* Stay on top */
     top: '0', /* Stay at the top */
     left: '0',
-    backgroundColor: 'red', /* Black */
+    backgroundColor: '#3c44b1', /* Black */
     overflowX: 'hidden', /* Disable horizontal scroll */
     paddingTop: '20px'}
   }

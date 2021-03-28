@@ -5,7 +5,8 @@ import PageHeader from '../components/PageHeader';
 import SideMenumakeStyles from '../components/SideMenumakeStyles';
 import SideMenuWithStyles from '../components/SideMenuWithStyles';
 import './App.css';
-import AccessibilityIcon from '@material-ui/icons/Accessibility';
+
+import Employees from '../pages/Employees/Employees';
 
 const theme = createMuiTheme({
   palette:{
@@ -32,11 +33,8 @@ function App() {
       <ThemeProvider theme={theme}>
       <SideMenuWithStyles/>
       <Header/>
-      <PageHeader
-      title="Page Title"
-      subtitle="Page Description"
-      icon={<AccessibilityIcon fontSize="large"/>}>
-      </PageHeader>
+      
+      <Employees/>
       <CssBaseline/>
       </ThemeProvider>
     </div>
