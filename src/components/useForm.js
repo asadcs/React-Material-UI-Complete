@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import {makeStyles} from '@material-ui/core'
 
 export function useForm(initialFValues) {
 
@@ -31,9 +32,10 @@ const useStyles=makeStyles(theme=>({
     }
 }))
 export  function Form(props) {
+    const classes = useStyles()
     return (
         <form className={classes.root}>
             {props.children}
-        </form>   )
+        </form> )
 }
 
