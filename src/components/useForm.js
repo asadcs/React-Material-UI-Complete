@@ -5,7 +5,9 @@ export function useForm(initialFValues) {
 
     const [values,setValues] = useState(initialFValues)
     const handleChangeInput=e=>{
+       
         const{name,value}=e.target
+        console.log(name + '--' + value)
         setValues({
            ...values,
            [name]:value
