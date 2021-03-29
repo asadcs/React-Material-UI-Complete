@@ -1,9 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import {Grid,makeStyles,TextField,form, FormControlLabel, FormLabel,Radio,RadioGroup,StyledRadio,FormControl} from '@material-ui/core'
 import {Form, useForm} from '../../components/useForm'
-import Input from '../../components/controls/Input'
+import Controls from '../../components/controls/Controls'
+import * as service from '../../services/service'
 
 
+const genderItems=[
+    {id:'male',title:'Male'},
+    {id:'female',title:'Female'},
+    {id:'other',title:'Other'}
+]
 
 const initialFValues={
 id:0,
@@ -33,7 +39,7 @@ export default function EmployeesForm() {
             
             <Grid container>
                 <Grid item xs={6}>
-<Input
+<Controls.Input
 label="FullName"
 name="fullName"
 value={values.fullName}
@@ -55,7 +61,7 @@ onChange={handleChangeInput}
                     value={values.email}
                     ></TextField> */}
 
-<Input
+<Controls.Input
 label="Email"
 name="Email"
 value={values.Email}
@@ -64,19 +70,23 @@ onChange={handleChangeInput}
 
                 </Grid>
                 <Grid item xs={6}>
-                    <FormControl >
-                    <FormLabel>Gender</FormLabel>
-                    <RadioGroup 
-                    row={true}
-                    name="gender"
-                    value={values.fullName}
-                    onChange={handleChangeInput}
-                    >
-                    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
-    <FormControlLabel value="other" control={<Radio />} label="Other" />
-    </RadioGroup>
-                    </FormControl>
+<Controls.RadioGroups
+label="gender"
+name="gender"
+value={values.fullName}
+onChange={handleChangeInput}
+items={genderItems}
+/>
+
+
+<Controls.Select
+label="Department"
+name="DepartmentID"
+value={values.departmentID}
+onChange={handleChangeInput}
+options={service.getDepartmentCollection()}
+/>
+                   
                 </Grid>
             </Grid>
             
